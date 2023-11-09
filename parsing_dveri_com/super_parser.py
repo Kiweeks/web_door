@@ -27,7 +27,7 @@ links = (
     # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/kyub-rbe-total-black-super-white',
     # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/graffiti-32-32-total-black-super-white',
     # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/dzhet-3-rbe-total-black-snow-melinga',
-    # '',
+    # 'https://dveri.com/catalog/vhodnye-dveri/bravo-t/thermo-tehno-dekor-2-bukle-chernoe-cappuccino-veralinga', # c терморазрывом
 )
 
 def write_result(index: int, result: str, files: list):
