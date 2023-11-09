@@ -1,0 +1,201 @@
+img {
+    width: 100px;
+    margin: 15px 0px 10px 0px;
+    align-content: center;
+}
+
+nav {
+    position: fixed;
+    height: 100vh;
+    color: #FFA000;
+    transition: all .5s;
+}
+
+.card-text:hover {
+    color: #FFA000;
+}
+
+/*.row-cols-md-3>* {*/
+/*     flex: 0 20 auto;*/
+/*     width: 20%;*/
+/*}*/
+
+/*ul {*/
+/*    color: #FFA000;*/
+/*    transform: scale(1.05);*/
+/*}*/
+
+/*main {*/
+/*    text-align: center;*/
+/*    float: right;*/
+/*    margin-top: 50px;*/
+/*    width: 78%;*/
+/*}*/
+
+/*aside {*/
+/*    position: fixed;*/
+/*    float: left;*/
+/*    width: 18%;*/
+/*    padding: 1%;*/
+/*    height: 100vh;*/
+/*    border-right: 2px solid #4d4d4d;*/
+/*}*/
+
+/*aside ul {list-style: none}*/
+
+/*aside ul li {*/
+/*    color: black;*/
+/*    display: block;*/
+/*    margin-top: 10px;*/
+/*    transition: all .1s;*/
+/*}*/
+
+/*aside ul li:hover, aside ul a:hover {*/
+/*    color: #FFA000;*/
+/*    transform: scale(1.05)*/
+/*}*/
+
+/*main {*/
+/*   color: black;*/
+/*    display: block;*/
+/*}*/
+
+/*aside a {*/
+/*    text-decoration: none;*/
+/*    color: black;*/
+/*}*/
+
+/*aside a:hover{*/
+/*    color: #FFA000;*/
+/*}*/
+
+/*main {*/
+/*    text-align: center;*/
+/*    float: right;*/
+/*    margin-top: 50px;*/
+/*    width: 78%;*/
+/*}*/
+
+/*main .features p {*/
+/*    text-align: center;*/
+/*    font-size: 14px;*/
+
+/*}*/
+
+/*footer {*/
+/*    background: #CCCCCC;*/
+/*    float: right;*/
+/*    width: 78%;*/
+/*}*/
+
+/*.btn-toggle-nav a {*/
+/*  padding: .1875rem .5rem;*/
+/*  margin-top: .125rem;*/
+/*  margin-left: 1.25rem;*/
+/*}*/
+
+/*.page-door {*/
+/*  padding-top: 30px;*/
+/*  padding-bottom: 30px;*/
+/*  display: flex;*/
+/*  flex-direction: row;*/
+/*  gap: 50px;*/
+/*}*/
+
+/*.page-door-img {*/
+/*    width: 48%;*/
+/*}*/
+
+/*div .text {*/
+/*    width: 100%;*/
+/*}*/
+
+.btn-toggle {
+  padding: .25rem .5rem;
+  font-weight: 600;
+  color: var(--bs-emphasis-color);
+  background-color: transparent;
+}
+.btn-toggle:hover,
+.btn-toggle:focus {
+  color: rgba(var(--bs-emphasis-color-rgb), .85);
+  background-color: var(--bs-tertiary-bg);
+}
+
+.btn-toggle::before {
+  width: 1.25em;
+  line-height: 0;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  transition: transform .35s ease;
+  transform-origin: .5em 50%;
+}
+
+[data-bs-theme="dark"] .btn-toggle::before {
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%28255,255,255,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+}
+
+.btn-toggle[aria-expanded="true"] {
+  color: rgba(var(--bs-emphasis-color-rgb), .85);
+}
+.btn-toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+.btn-toggle-nav a {
+  padding: .1875rem .5rem;
+  margin-top: .125rem;
+  margin-left: 1.25rem;
+}
+
+.btn-toggle-nav a:hover,
+.btn-toggle-nav a:focus {
+  background-color: var(--bs-tertiary-bg);
+}
+
+.sidebar {
+    box-shadow: 0 0 64px #e4e6eb;
+}
+
+.choosebutton {
+    padding: 5px 10px;
+    border: #00000060 2px solid;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+input[type=radio]:checked + .choosebutton, .choosebutton.active {
+    border-color: #FFA000;
+}
+
+@media screen and (max-width: 760px) {
+    .data_ingo {display: none!important}
+    .сontact_phone {display: none!important}
+    .page-door {flex-direction: column;}
+    .sidebar {
+        background: white;
+          z-index: 2212121;
+          width: 50vw;
+    }
+}
+
+
+/* Элемент | http://127.0.0.1:8000/door_info/1 */
+
+.sidebar {
+  display: flex;
+  height: 100vh;
+}
+
+/* Элемент | http://127.0.0.1:8000/door_info/1 */
+
+ul.list-unstyled:nth-child(2) {
+  flex-grow: 1;
+}
+
+/* Элемент | http://127.0.0.1:8000/door_info/1 */
+
+.sidebar > div:nth-child(1) {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

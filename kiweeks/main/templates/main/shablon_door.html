@@ -1,0 +1,88 @@
+{% extends 'main/shablon.html' %}
+{% load static %}
+
+{% block title %}
+{{door.title}}
+{% endblock %}
+
+{% block content %}
+<div class="page-door" style="display: flex; gap: 30px;">
+    <div>
+        {% for photo in door.photo_door_set.all %}
+        <img src="{{photo.photos.url}}" style="width: 200px">
+        {% endfor %}
+    </div>
+    <div class="test" style="margin-top: 6px;">
+        <h2 >{{door.title}}</h2>
+<!--        Не забыть ссылку-->
+        <h6>Категория: <a href="{% url door.category.urls category_id=door.category.id %}" style="color: #ABABAB;">{{door.category}}</a></h6>
+<!--        Оснавные характеристики-->
+        <div style="display:flex;justify-content: space-between;gap:30px;margin-top:20px;">
+            <div style="gap: 20px;display: flex;flex-direction: column;">
+<!--                Цвет Снаружи-->
+                <div>
+                    <label>Цвет снаружи</label>
+                    {% for color in door.colors_outside.iterator %}
+                        <div style="width: 25px;height: 25px;-webkit-border-radius: 25px;-moz-border-radius: 25px;border: 2px solid white;box-shadow: var(--wvs-selected-item-box-shadow,0 0 0 2px #FFA000); border-radius: 25px;background: #{{color.code}};"></div>
+                    {% endfor %}
+                </div>
+                <div >
+<!--                Размеры-->
+                <label>Размер</label>
+                    <br>
+                    {% for size in door.sizes.iterator %}
+                    <input type="radio" id="sizes{{size.id}}" name="doorsize" style="display:none;">
+                    <label for="sizes{{size.id}}" class="choosebutton">
+                        {{size}}
+                    </label>
+                    {% endfor %}
+                </div>
+                <div >
+<!--                Стороны открывая-->
+                            <label>Тип открывания</label>
+                    <br>
+                    {% for sides in door.sides.iterator %}
+                    <input type="radio" id="sides{{sides.id}}" name="sideschoose" style="display:none;">
+                    <label for="sides{{sides.id}}" class="choosebutton">
+                        {{sides}}
+                    </label>
+                    {% endfor %}
+                </div>
+            </div>
+            <div style="gap: 20px;display: flex;flex-direction: column;">
+<!--                Цвет Внутри-->
+                <div>
+                    <label>Цвет внутри</label>
+                    {% for color in door.colors_inside.iterator %}
+                        <div style="width: 25px;height: 25px;-webkit-border-radius: 25px;-moz-border-radius: 25px;border: 2px solid white;box-shadow: var(--wvs-selected-item-box-shadow,0 0 0 2px #FFA000); border-radius: 25px;background: #{{color.code}};"></div>
+                    {% endfor%}
+                </div>
+<!--                Тип-->
+                <div>
+                    <label>Тип</label>
+                    <p class="choosebutton active">{{door.type}}</p>
+                </div>
+<!--                Бренд-->
+                <div>
+                    <label>Бренд</label>
+                    <p class="choosebutton active">{{door.brand}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Характеристики-->
+<div class="page-door-description">
+    <h3>Характеристики</h3>
+    <div>
+        <pre>{{door.properties}}</pre>
+    </div>
+</div>
+<!--    Описание-->
+<div>
+    <h3>Описание</h3>
+    <div >
+        <p>{{door.description}}</p>
+    </div>
+</div>
+{% endblock %}
