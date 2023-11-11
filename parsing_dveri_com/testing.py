@@ -7,7 +7,7 @@ import requests
 def get_domain(link: str) -> str:
     return urlparse(link).netloc
 
-link = 'https://dveri.com/catalog/vhodnye-dveri/porta-r/milo-bukle-chernoe-bianco-veralinga?option_id=8218'
+link = 'https://dveri.com/catalog/vhodnye-dveri/bravo-t/thermo-tehno-dekor-2-bukle-chernoe-snow-melinga?option_id=12489'
 
 resp = requests.get(link)
 result = link + '\n\n'
@@ -24,13 +24,13 @@ for param in params:
     value = param.find('div', class_='product__property-value').text.strip()
     result += f"{name} {value}\n"
 
-result += '\n'
-sizes = bs.find('div', class_='product__size-wrap').find_all('div', class_='product__size-list')
+photos = bs.find('div', class_='product__img product__img--double').find_all('div')
+files = []
+for photo in photos:
+    full_path = 'https://' + get_domain(link) + f'/{photo.find("img")["src"]}'
+    name = photo.find("img")["src"].split('/')[-1]
 
-for size in sizes:
-    result += size.text.strip()
+    files.append({'name': name, 'data': requests.get(full_path).content})
 
-# print(sizes)
 
-print(result)
 # print(bs.find('div', 'product__img-wrap').find('img')['src'])

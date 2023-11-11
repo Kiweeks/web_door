@@ -72,7 +72,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'kiweeks.wsgi.application'
 
 
-MEDIA_ROOT = r'C:\Users\Hiro\Desktop\Django\kiweeks'
+MEDIA_ROOT = r'C:\Users\Hiro\Documents\GitHub\web_door\kiweeks'
 
 
 # MEDIA_ROOT = '/home/kiwees/Документы/Django_py/Django/Django/kiweeks'

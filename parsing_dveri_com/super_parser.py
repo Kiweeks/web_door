@@ -5,39 +5,19 @@ from os import makedirs
 import requests
 
 links = (
-    'https://dveri.com/catalog/vhodnye-dveri/porta-r/milo-bukle-chernoe-bianco-veralinga?option_id=8218',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/milo-bukle-chernoe-cappuccino-veralinga?option_id=8210',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/milo-bukle-chernoe-wenge-veralinga?option_id=8214',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/lajn-bukle-chernoe-snow-melinga?option_id=9507',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/lajn-bukle-chernoe-snow-art?option_id=12457',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/lajn-bukle-chernoe-look-art?option_id=9507',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/lajn-bukle-chernoe-cappuccino-veralinga?option_id=9515',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/lajn-bukle-chernoe-slate-art?option_id=9527',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/lajn-bukle-chernoe-grey-melinga?option_id=9511',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/lajn-bukle-chernoe-wenge-veralinga?option_id=10660',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/graffiti-1-insajd-bukle-chernoe-snow-art',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/graffiti-1-insajd-bukle-chernoe-look-art?option_id=9478',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/graffiti-1-insajd-bukle-chernoe-slate-art?option_id=9474',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/prof-bukle-chernoe-bianco-veralinga?option_id=9221',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/prof-bukle-chernoe-cappuccino-veralinga?option_id=9221',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/prof-bukle-chernoe-wenge-veralinga?option_id=9225',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/syut-kale-bukle-chernoe-white-wood',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/graffiti-5-5-kale-slate-art-look-art',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/kyub-rbe-slate-art-snow-art',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/kyub-rbe-total-black-super-white',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/graffiti-32-32-total-black-super-white',
-    # 'https://dveri.com/catalog/vhodnye-dveri/porta-r/dzhet-3-rbe-total-black-snow-melinga',
-    # 'https://dveri.com/catalog/vhodnye-dveri/bravo-t/thermo-tehno-dekor-2-bukle-chernoe-cappuccino-veralinga', # c терморазрывом
+    'https://dveri.com/catalog/vhodnye-dveri/bravo-t/thermo-tehno-dekor-2-bukle-chernoe-snow-melinga?option_id=12489',
+    'https://dveri.com/catalog/vhodnye-dveri/bravo-t/thermo-tehno-dekor-2-bukle-chernoe-cappuccino-veralinga?option_id=12485',
+    'https://dveri.com/catalog/vhodnye-dveri/bravo-t/thermo-tehno-dekor-2-bukle-chernoe-wenge-veralinga?option_id=12489', # c терморазрывом
 )
 
 def write_result(index: int, result: str, files: list):
     makedirs(f'door-{index}', exist_ok=True)
-    with open(join(f'door-{index}', 'data.txt'), 'w+') as file:
-        encoding = "utf-8"
+    with open(join(f'door-{index}', 'data.txt'), 'w+', encoding= "utf-8") as file:
         file.write(result)
 
     for file in files:
         with open(join(f'door-{index}', file['name']), 'wb') as img:
+
             img.write(file['data'])
 
 
