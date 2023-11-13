@@ -65,7 +65,7 @@ class Door(models.Model):
     sizes = models.ManyToManyField(Size_door, name='sizes', related_name='size_doors', null=True)
     sides = models.ManyToManyField(Side_of_door, name='sides', related_name='sides_of_doors', null=True)
     properties = models.TextField('Характеристики')
-    description = models.TextField('Описание')
+    description = models.TextField('Описание', null=True)
     colors_inside = models.ManyToManyField(Color_inside, related_name='color_inside')
     colors_outside = models.ManyToManyField(Color_outside, related_name='color_outside')
 
