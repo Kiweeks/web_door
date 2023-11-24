@@ -20,7 +20,6 @@ result += title + '\n\n'
 sides = bs.find('td', id='size_selecting').find_all('div')
 
 for side in sides:
-    # values = side.find('div', class_='list-title').text.strip()
     result += f"{side.text.strip()}\n"
 result += '\n\n'
 
@@ -32,6 +31,10 @@ for param in params:
     name = param.find('strong').text.strip()
     value = param.find_all('td')[1].text.strip()
     result += f"{name}: {value}\n"
+
+img = bs.find('img', id='main_image_big')['src']
+full_path = 'https://' + get_domain(link) + f'/{img}'
+name = img.split('/')[-1]
 
 # colors = bs.find_all()
 

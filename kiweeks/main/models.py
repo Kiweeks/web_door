@@ -67,7 +67,7 @@ class Door(models.Model):
     properties = models.TextField('Характеристики')
     description = models.TextField('Описание', null=True)
     colors_inside = models.ManyToManyField(Color_inside, related_name='color_inside')
-    colors_outside = models.ManyToManyField(Color_outside, related_name='color_outside')
+    colors_outside = models.ManyToManyField(Color_outside, related_name='color_outside', null=True)
 
     def __str__(self):
         return self.title
