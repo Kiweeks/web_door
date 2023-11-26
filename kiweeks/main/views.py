@@ -8,9 +8,10 @@ def index(request):
     doors = Door.objects.prefetch_related(Prefetch('sizes', queryset=Size_door.objects.all()),
                                           Prefetch('colors_inside', queryset=Color_inside.objects.all()),
                                           Prefetch('colors_outside', queryset=Color_outside.objects.all()))
-    # for door in doors:
-    #     for color in door.colors_inside.iterator():
-    #         print(color.code)
+    for door in doors:
+        # print(len(door.photo_door_set.all()))
+        # for photo in door.photo_door_set.all:
+        #     print(photo)
     return render(request, 'main/index.html', context={'doors': doors})
 
 

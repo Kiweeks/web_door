@@ -13,9 +13,15 @@
         <div class="col" style="min-height: 400px">
           <div class="card shadow-sm" style="min-height: 400px">
             <div style="margin: 0 auto">
-                  {% for photo in door.photo_door_set.all %}
-                <img src="{{photo.photos.url}}" style="width: 80px">
+              {% if door.photo_door_set.all|length == 1 and category.id <= 3 %}
+                {% for photo in door.photo_door_set.all %}
+                <img src="{{photo.photos.url}}" style="width: 140px; height: 160px;">
                   {% endfor %}
+              {% else %}
+                  {% for photo in door.photo_door_set.all %}
+                <img src="{{photo.photos.url}}" style="width: 80px; height: 160px">
+                  {% endfor %}
+              {% endif%}
             </div>
             <div class="card-body">
               <p class="card-text" style="text-align: center;">{{door.title}}</p>

@@ -16,12 +16,15 @@
 <body>
 <div class='container-fluid'>
 <div class='row'>
-<nav class="sidebar col-md-3 col-lg-2 p-0 ">
-	<div style="width: 100%;">
+<div class="offcanvas offcanvas-start" style="max-width: 350px" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
     <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
       <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
       <span class="fs-5 fw-semibold"><img src="/static/main/img/logo.JPG"></span>
     </a>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
     <ul class="list-unstyled ps-0">
       <li class="mb-1">
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
@@ -45,26 +48,25 @@
           </ul>
         </div>
       </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-          Фурнитура
-        </button>
-        <div class="collapse" id="orders-collapse" style="">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">...</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">...</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">...</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">....</a></li>
-          </ul>
-        </div>
-      </li>
+<!--      <li class="mb-1">-->
+<!--        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">-->
+<!--          Фурнитура-->
+<!--        </button>-->
+<!--        <div class="collapse" id="orders-collapse" style="">-->
+<!--          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">-->
+<!--            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">...</a></li>-->
+<!--            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">...</a></li>-->
+<!--            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">...</a></li>-->
+<!--            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">....</a></li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </li>-->
     </ul>
-        <button onclick="document.querySelector('.sidebar').style.display='none'">X</button>
   </div>
-</nav>
+</div>
 <div class="main_window" style="display: flex; flex-direction: column">
-<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-3 fixed-top" style="box-shadow: 65px 0 70px #e4e6eb;background:white">
-    <div style="display: flex;justify-content: center;align-items: center;gap: 30px;height: 30px;">
+<div class="fixed-top" style="box-shadow: 65px 0 70px #e4e6eb;background:white">
+    <div style="display: flex;justify-content: center;align-items: center;gap: 30px;height: 40px;">
         <p>Воскресенск, Московская область, 2-я Заводская улица, 6с2</p>
         <p>Ежедневно с 9:00 до 18:00</p>
         <div class="сontact_phone" style="display: flex;">
@@ -74,12 +76,12 @@
         </div>
     </div>
     <div style="display: flex;height: 90px;justify-content: space-between;text-align: center;">
-        <button onclick="document.querySelector('.sidebar').style.display='flex'" style="height: 68px;justify-content: center;display: flex;align-self: center;align-items: center;">меню</button>
-        <h1 class="text-center" style="display: flex;justify-content: center;align-content: center;flex-direction: column;">Двери Вос</h1>
         <div style="color: #FFF;font-family: Inter;font-size: 32px;font-style: normal;font-weight: 400;line-height: normal;width:68px"></div>
+        <h1 class="text-center" style="display: flex;justify-content: center;align-content: center;flex-direction: column;">Двери Вос</h1>
+        <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"> меню </button>
     </div>
 </div>
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-3">
+<main class="px-md-4 pt-3">
     <br>
     <br>
     <br>
