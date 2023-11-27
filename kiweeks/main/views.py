@@ -8,7 +8,7 @@ def index(request):
     doors = Door.objects.prefetch_related(Prefetch('sizes', queryset=Size_door.objects.all()),
                                           Prefetch('colors_inside', queryset=Color_inside.objects.all()),
                                           Prefetch('colors_outside', queryset=Color_outside.objects.all()))
-    for door in doors:
+    # for door in doors:
         # print(len(door.photo_door_set.all()))
         # for photo in door.photo_door_set.all:
         #     print(photo)
@@ -20,10 +20,6 @@ def door_info(request, door_id):
     # for color in door.colors_inside.iterator():
     #     print(color.color, color.code)
     return render(request, 'main/shablon_door.html', context={'door': door})
-
-
-def about(request):
-    return render(request, 'main/about.html')
 
 
 def assortment(request, category_id):
