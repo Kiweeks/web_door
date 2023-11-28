@@ -160,6 +160,10 @@ input[type=radio]:checked + .choosebutton, .choosebutton.active {
     border-color: #FFA000;
 }
 
+@media screen and (max-width: 1200px){
+    .row-cols-1 > * {width: 25%}
+}
+
 @media screen and (max-width: 760px) {
     .data_ingo {display: none!important}
     .сontact_phone {display: none!important}
@@ -169,9 +173,14 @@ input[type=radio]:checked + .choosebutton, .choosebutton.active {
           z-index: 2212121;
           width: 50vw;
     }
+    .top-data-info {height:120px}
+    .row-cols-1 > * {width: 50%;}
     /*#door_cart {width: 150px;height: 50px}*/
 }
 
+@media screen and (max-width: 400px){
+    .row-cols-1 > * {width: 100%;}
+}
 
 /* Элемент | http://127.0.0.1:8000/door_info/1 */
 

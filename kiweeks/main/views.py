@@ -25,4 +25,7 @@ def door_info(request, door_id):
 def assortment(request, category_id):
     doors = Door.objects.filter(category_id=category_id)
     category = Category_door.objects.get(id=category_id)
-    return render(request, 'main/entrance_doors.html', context={'doors': doors, 'category': category})
+    category_link = category.link_text
+    print('\n\n\n\n\n\n\n\n\n')
+    print(category_link)
+    return render(request, 'main/entrance_doors.html', context={'doors': doors, 'category': category, 'category_link': category_link})

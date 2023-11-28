@@ -25,14 +25,15 @@ class Type_door(models.Model):
 
 class Category_door(models.Model):
     categories = models.CharField('Категория', max_length=255)
-    urls = models.CharField('Ссылка на категории',max_length=255, null=True)
+    urls = models.CharField('Ссылка на категории', max_length=255, null=True)
+    link_text = models.CharField('Назавание ссылки', max_length=255, null=True)
 
     def __str__(self):
         return self.categories
 
     class Meta:
-        verbose_name = 'Тип двери'
-        verbose_name_plural = 'Типы дверей'
+        verbose_name = 'Ссылка и класс'
+        verbose_name_plural = 'Ссылки и классы'
 
 
 class Size_door(models.Model):
