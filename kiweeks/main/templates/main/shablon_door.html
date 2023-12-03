@@ -15,7 +15,7 @@
     <div class="test" style="margin-top: 6px;">
         <h2 >{{door.title}}</h2>
 <!--        Не забыть ссылку-->
-        <h6>Категория: <a href="{% url door.category.urls category_id=door.category.id %}" style="color: #ABABAB;">{{door.category}}</a></h6>
+        <h6>Категория: <a href="{% url door.category.urls category=door.category.link_text %}" style="color: #ABABAB;">{{door.category}}</a></h6>
 <!--        Оснавные характеристики-->
         <div style="display:flex;gap:30px;margin-top:20px;">
             <div style="gap: 20px;display: flex;flex-direction: column;">
@@ -75,7 +75,7 @@
 <div class="page-door-description">
     <h3>Характеристики</h3>
     <div>
-        <pre>{{door.properties}}</pre>
+        <pre style="font-size: 15px">{{door.properties}}</pre>
     </div>
 </div>
 <!--    Описание-->

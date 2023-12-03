@@ -3,6 +3,19 @@
 
 {% block title %}Главная страница{% endblock %}
 
+{% block headers %}
+<div class="fixed-top" style="box-shadow: 65px 0 70px #e4e6eb;background:white">
+    <div style="display: flex;height: 90px;justify-content: space-between;text-align: center;">
+        <button class="btn btn-secondary" style="height: 50px; display: flex; align-self: center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+            </svg>
+        </button>
+        <a href="/" style="text-decoration: none;color: black;display: flex;"><h1 class="text-center" style="display: flex;justify-content: center;align-content: center;flex-direction: column;">Двери Вос</h1></a>
+        <div style="color: #FFF;font-family: Inter;font-size: 32px;font-style: normal;font-weight: 400;line-height: normal;width:68px"></div>
+    </div>
+</div>
+{% endblock %}
 
 {% block content %}
 <div >
