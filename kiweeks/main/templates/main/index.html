@@ -43,7 +43,7 @@
 <h4 class="h4_text" style="max-width: 70%; margin: 0 auto; margin-top: 40px">"Металлические двери для безопасности и комфорта вашего жилья. Широкий выбор моделей по привлекательным ценам от лучших производителей. Доставка и монтаж в Московской области. Защитите свой дом с Двери ВОС!</h4>
 <div class="album py-5 bg-body-tertiary" style="margin-top: 40px">
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 row-cols-md-5 row-cols-md-6 g-2">
-  {% for door in doors%}
+  {% for door in doors %}
   <a href="{% url 'door_info' door_id=door.id %}" style="color:black; text-decoration:none;">
         <div class="col" style="min-height: 350px">
           <div class="card shadow-sm" style="min-height: 350px">

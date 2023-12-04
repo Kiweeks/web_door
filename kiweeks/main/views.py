@@ -1,8 +1,15 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render, HttpResponse
 from django.db.models import Prefetch
 import pickle
+from django.views.generic import ListView
 from .models import Door, Color_outside, Color_inside, Size_door, Category_door
 
+
+# class DoorIndex(ListView):
+#     model = Door
+#     template_name = 'main/index.html'
+#     context_object_name = 'doors'
 
 def index(request):
     doors = Door.objects.prefetch_related(Prefetch('sizes', queryset=Size_door.objects.all()),
@@ -25,5 +32,10 @@ def door_info(request, door_id):
 def assortment(request, category):
     category = Category_door.objects.get(link_text=category)
     doors = Door.objects.filter(category_id=category.id)
+    print(category)
+    contact_list = Door.objects.filter(category_id=category.id)
+    paginator = Paginator(contact_list, 20)
 
-    return render(request, 'main/entrance_doors.html', context={'doors': doors, 'category_id': category.id})
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'main/entrance_doors.html', context={'doors': doors, 'category': category, 'page_obj': page_obj})
