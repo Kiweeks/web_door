@@ -64,10 +64,26 @@
   </div>
 </div>
 <div class="main_window" style="display: flex; flex-direction: column">
-{% block headers %}
-{% endblock %}
+<div class="fixed-top" style="box-shadow: 65px 0 70px #e4e6eb;background:white">
+    <div class="header_platform" style="display: flex;justify-content: space-between;text-align: center;">
+        <button class="btn btn-secondary" style="margin-left: 15px;height: 50px; display: flex; align-self: center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+            </svg>
+        </button>
+        <a href="/" style="text-decoration: none;color: black;display: flex;">
+            <picture style="display: flex">
+                <source media="(min-width: 900px)" style="width: 115%; margin: 0; height: auto;" srcset="/static/main/img/photo_header.png">
+                <source media="(min-width: 300px)" style="width: 115%; margin: 0; height: auto;" srcset="/static/main/img/header_phone.png">
+                <img class="photo_header" style="width: 115%; margin: 0; height: auto;" src="/static/main/img/photo_header.png">
+            </picture>
+        </a>
+        <div style="color: #FFF;font-family: Inter;font-size: 32px;font-style: normal;font-weight: 400;line-height: normal;width:68px"></div>
+    </div>
+</div>
+<!--<a href="/" style="text-decoration: none;color: black;display: flex;"><img class="photo_header" style="width: 115%; margin: 0; height: auto;" src="/static/main/img/header_phone.png"></a>-->
+<!--<a href="/" style="text-decoration: none;color: black;display: flex;"><img class="photo_header" style="width: 115%; margin: 0; height: auto;" src="/static/main/img/photo_header.png"></a>-->
 <main class="px-md-4 pt-3">
-    <br>
     <br>
     <br>
     <br>

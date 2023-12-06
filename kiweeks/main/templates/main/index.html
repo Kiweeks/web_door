@@ -3,20 +3,6 @@
 
 {% block title %}Главная страница{% endblock %}
 
-{% block headers %}
-<div class="fixed-top" style="box-shadow: 65px 0 70px #e4e6eb;background:white">
-    <div style="display: flex;height: 90px;justify-content: space-between;text-align: center;">
-        <button class="btn btn-secondary" style="height: 50px; display: flex; align-self: center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-            </svg>
-        </button>
-        <a href="/" style="text-decoration: none;color: black;display: flex;"><h1 class="text-center" style="display: flex;justify-content: center;align-content: center;flex-direction: column;">Двери Вос</h1></a>
-        <div style="color: #FFF;font-family: Inter;font-size: 32px;font-style: normal;font-weight: 400;line-height: normal;width:68px"></div>
-    </div>
-</div>
-{% endblock %}
-
 {% block content %}
 <div >
 <div id="carouselExample" class="carousel slide" style="margin: 0 auto;">
@@ -40,10 +26,10 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<h4 class="h4_text" style="max-width: 70%; margin: 0 auto; margin-top: 40px">"Металлические двери для безопасности и комфорта вашего жилья. Широкий выбор моделей по привлекательным ценам от лучших производителей. Доставка и монтаж в Московской области. Защитите свой дом с Двери ВОС!</h4>
-<div class="album py-5 bg-body-tertiary" style="margin-top: 40px">
+<h2 class="h4_text" style="max-width: 70%;margin: 0 auto;margin-top: 30px;display: flex;justify-content: center;"><b>Двери</b></h2>
+<div class="album py-5 bg-body-tertiary" style="margin-top: 20px">
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 row-cols-md-5 row-cols-md-6 g-2">
-  {% for door in doors %}
+  {% for door in page_obj %}
   <a href="{% url 'door_info' door_id=door.id %}" style="color:black; text-decoration:none;">
         <div class="col" style="min-height: 350px">
           <div class="card shadow-sm" style="min-height: 350px">

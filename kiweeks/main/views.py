@@ -15,11 +15,15 @@ def index(request):
     doors = Door.objects.prefetch_related(Prefetch('sizes', queryset=Size_door.objects.all()),
                                           Prefetch('colors_inside', queryset=Color_inside.objects.all()),
                                           Prefetch('colors_outside', queryset=Color_outside.objects.all()))
+    paginator = Paginator(doors, 48)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     # for door in doors:
         # print(len(door.photo_door_set.all()))
         # for photo in door.photo_door_set.all:
         #     print(photo)
-    return render(request, 'main/index.html', context={'doors': doors})
+    return render(request, 'main/index.html', context={'page_obj':page_obj, 'doors': doors})
 
 
 def door_info(request, door_id):
@@ -32,10 +36,9 @@ def door_info(request, door_id):
 def assortment(request, category):
     category = Category_door.objects.get(link_text=category)
     doors = Door.objects.filter(category_id=category.id)
-    print(category)
-    contact_list = Door.objects.filter(category_id=category.id)
-    paginator = Paginator(contact_list, 20)
+
+    paginator = Paginator(doors, 20)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'main/entrance_doors.html', context={'doors': doors, 'category': category, 'page_obj': page_obj})
+    return render(request, 'main/entrance_doors.html', context={'page_obj': page_obj, 'doors': doors, 'category': category})

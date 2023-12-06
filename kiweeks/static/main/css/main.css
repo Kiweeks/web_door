@@ -160,11 +160,16 @@ input[type=radio]:checked + .choosebutton, .choosebutton.active {
     border-color: #FFA000;
 }
 
-@media screen and (max-width: 1200px){
-    .row-cols-1 > * {width: 25%}
+@media screen and (max-width: 1600px){
+    .header_platform > * {height: 90px;}
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 1200px){
+    .row-cols-1 > * {width: 25%}
+    .header_platform > * {height: 90px;}
+}
+
+@media screen and (max-width: 800px) {
     .data_ingo {display: none!important}
     .сontact_phone {display: none!important}
     .page-door {flex-direction: column;}
@@ -175,12 +180,24 @@ input[type=radio]:checked + .choosebutton, .choosebutton.active {
     }
     .top-data-info {height:120px}
     .row-cols-1 > * {width: 50%;}
+    .header_platform > * {height: 115px;}
+    /*.photo_header {*/
+    /*     background-image:url("/static/main/img/header_phone.png");*/
+    /*}*/
     /*#door_cart {width: 150px;height: 50px}*/
 }
 
 @media screen and (max-width: 400px){
     .row-cols-1 > * {width: 100%;}
+    .header_platform > * {height: 115px;}
+    /*.photo_header {*/
+    /*     background-image:url("/static/main/img/header_phone.png");*/
+    /*}*/
 }
+
+/*.photo_header {*/
+/*     background-image:url("/static/main/img/header_phone.png");*/
+/*}*/
 
 /* Элемент | http://127.0.0.1:8000/door_info/1 */
 
