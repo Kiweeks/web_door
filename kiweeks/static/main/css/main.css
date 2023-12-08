@@ -161,12 +161,18 @@ input[type=radio]:checked + .choosebutton, .choosebutton.active {
 }
 
 @media screen and (max-width: 1600px){
-    .header_platform > * {height: 90px;}
+    .header_platform > * {height: 115px;}
 }
 
 @media screen and (max-width: 1200px){
     .row-cols-1 > * {width: 25%}
-    .header_platform > * {height: 90px;}
+    .header_platform > * {height: 115px;}
+}
+
+@media screen and (max-width: 1100px) {
+    .photo_header {
+         content: url("/static/main/img/header_phone.png")!important;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -181,18 +187,12 @@ input[type=radio]:checked + .choosebutton, .choosebutton.active {
     .top-data-info {height:120px}
     .row-cols-1 > * {width: 50%;}
     .header_platform > * {height: 115px;}
-    /*.photo_header {*/
-    /*     background-image:url("/static/main/img/header_phone.png");*/
-    /*}*/
     /*#door_cart {width: 150px;height: 50px}*/
 }
 
 @media screen and (max-width: 400px){
     .row-cols-1 > * {width: 100%;}
     .header_platform > * {height: 115px;}
-    /*.photo_header {*/
-    /*     background-image:url("/static/main/img/header_phone.png");*/
-    /*}*/
 }
 
 /*.photo_header {*/
