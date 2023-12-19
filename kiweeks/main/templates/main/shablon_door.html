@@ -6,8 +6,8 @@
 {% endblock %}
 
 {% block content %}
-<div class="page-door" style="display: flex; gap: 30px;">
-    <div>
+<div class="page-door" style="display: flex; gap: 30px; justify-content: center;">
+    <div class="shablon_door_photos" style="display: flex; ">
         {% for photo in door.photo_door_set.all %}
         <img src="{{photo.photos.url}}" style="width: 200px">
         {% endfor %}
@@ -72,16 +72,16 @@
     </div>
 </div>
 <!--Характеристики-->
-<div class="page-door-description">
-    <h3>Характеристики</h3>
-    <div>
-        <pre style="font-size: 15px">{{door.properties}}</pre>
+<div class="page-door-description" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <h3 style="max-width: 970px; width: 100%;">Характеристики</h3>
+    <div class="shablon_door_description">
+        <pre style="font-size: 15px; max-width: 95vw">{{door.properties}}</pre>
     </div>
 </div>
 <!--    Описание-->
-<div>
-    <h3>Описание</h3>
-    <div >
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <h3 style="max-width: 970px; width: 100%;">Описание</h3>
+    <div style="max-width: 970px; width: 100%;">
         <p>{{door.description}}</p>
     </div>
 </div>

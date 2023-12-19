@@ -172,6 +172,7 @@ input[type=radio]:checked + .choosebutton, .choosebutton.active {
 @media screen and (max-width: 1100px) {
     .photo_header {
          content: url("/static/main/img/header_phone.png")!important;
+         width: 100%!important;
     }
 }
 
@@ -187,12 +188,14 @@ input[type=radio]:checked + .choosebutton, .choosebutton.active {
     .top-data-info {height:120px}
     .row-cols-1 > * {width: 50%;}
     .header_platform > * {height: 115px;}
+    .shablon_door_photos > * {width: 165px!important;}
     /*#door_cart {width: 150px;height: 50px}*/
 }
-
+/* !important - Это приоритет */
 @media screen and (max-width: 400px){
     .row-cols-1 > * {width: 100%;}
     .header_platform > * {height: 115px;}
+    .shablon_door_photos > * {width: 165px;}
 }
 
 /*.photo_header {*/
