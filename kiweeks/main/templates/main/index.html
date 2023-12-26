@@ -66,6 +66,24 @@
 </div>
 {% endblock %}
 
+{% block pages %}
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    {% for p in page_obj.paginator.page_range %}
+        {% if p != current_page %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ p }}">{{p}}</a>
+        </li>
+        {% else %}
+        <li class="page-item active">
+          <a class="page-link" href="?page={{ p }}">{{p}}</a>
+        </li>
+        {% endif%}
+    {% endfor %}
+  </ul>
+</nav>
+{% endblock %}
+
 <!--<div class="">-->
 <!--  <ul class="products columns-6">-->
 <!--    {%for door in doors%}-->

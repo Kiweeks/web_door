@@ -6,7 +6,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="page-door" style="display: flex; gap: 30px; justify-content: center;">
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+<div class="page-door" style="max-width: 970px;display: flex; gap: 30px; justify-content: center;">
     <div class="shablon_door_photos" style="display: flex; ">
         {% for photo in door.photo_door_set.all %}
         <img src="{{photo.photos.url}}" style="width: 200px">
@@ -30,12 +32,14 @@
 <!--                Размеры-->
                 <label>Размер</label>
                     <br>
-                    {% for size in door.sizes.iterator %}
-                    <input type="radio" id="sizes{{size.id}}" name="doorsize" style="display:none;">
-                    <label for="sizes{{size.id}}" class="choosebutton">
-                        {{size}}
-                    </label>
-                    {% endfor %}
+                    <div>
+                        {% for size in door.sizes.iterator %}
+                            <input type="radio" id="sizes{{size.id}}" name="doorsize" style="display:none;">
+                            <label for="sizes{{size.id}}" class="choosebutton">
+                                {{size}}
+                            </label>
+                        {% endfor %}
+                    </div>
                 </div>
                 <div >
 <!--                Стороны открывая-->
@@ -71,11 +75,13 @@
         </div>
     </div>
 </div>
+</div>
 <!--Характеристики-->
-<div class="page-door-description" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
     <h3 style="max-width: 970px; width: 100%;">Характеристики</h3>
-    <div class="shablon_door_description">
-        <pre style="font-size: 15px; max-width: 95vw">{{door.properties}}</pre>
+    <div style="max-width: 970px; width: 100%">
+        <p style="white-space: pre-line">{{door.properties}}</p>
     </div>
 </div>
 <!--    Описание-->
