@@ -3,7 +3,7 @@ from django.shortcuts import render, HttpResponse
 from django.db.models import Prefetch
 import pickle
 from django.views.generic import ListView
-from .models import Door, Color_outside, Color_inside, Size_door, Category_door
+from .models import Door, Color_outside, Color_inside, Size_door, Category_door, Photo_accessories
 
 
 # class DoorIndex(ListView):
@@ -31,6 +31,17 @@ def door_info(request, door_id):
     # for color in door.colors_inside.iterator():
     #     print(color.color, color.code)
     return render(request, 'main/shablon_door.html', context={'door': door})
+
+
+def accessories(request):
+    photos = Photo_accessories.objects.all()
+
+    paginator = Paginator(photos, 30)
+
+    page_number = request.GET.get('page', '1')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'main/accessories_assort.html',
+                  context={'page_obj': page_obj, 'current_page': int(page_number), 'photos': photos})
 
 
 def assortment(request, category):

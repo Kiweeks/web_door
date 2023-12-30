@@ -1,0 +1,41 @@
+{% extends 'main/shablon.html' %}
+
+{% block title %}Фурнитура{% endblock %}
+
+{% block content %}
+<h3 class="mt-5" style="text-align: center;">Фурнитура</h3>
+<!--Сделать фильтр-->
+<div class="album py-5 bg-body-tertiary" style="margin-top: 30px">
+<div class="container">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 row-cols-md-5 row-cols-md-6 g-2">
+  {% for photo in page_obj %}
+        <div class="col" style="min-height: 150px">
+          <div class="card shadow-sm" style="display: flex; min-height: 150px; justify-content: center;">
+            <div style="margin: 0 auto">
+                <img src="{{photo.photo.url}}" >
+            </div>
+          </div>
+       </div>
+  {%endfor%}
+</div>
+</div>
+</div>
+{% endblock %}
+
+{% block pages %}
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    {% for p in page_obj.paginator.page_range %}
+        {% if p != current_page %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ p }}">{{p}}</a>
+        </li>
+        {% else %}
+        <li class="page-item active">
+          <a class="page-link" href="?page={{ p }}">{{p}}</a>
+        </li>
+        {% endif%}
+    {% endfor %}
+  </ul>
+</nav>
+{% endblock %}
