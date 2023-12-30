@@ -86,3 +86,10 @@ class Photo_door(models.Model):
         verbose_name = 'Фотография'
         verbose_name_plural = 'Фотографии'
 
+
+class Photo_accessories(models.Model):
+    photo = models.ImageField('Фото фурнитура', upload_to='photo_accessories/')
+
+    class Meta:
+        verbose_name = 'Фурнитура'
+        verbose_name_plural = 'Фурнитура'
