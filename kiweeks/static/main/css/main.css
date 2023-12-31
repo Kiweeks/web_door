@@ -195,11 +195,14 @@ input[type=radio]:checked + .choosebutton, .choosebutton.active {
 }
 /* !important - Это приоритет */
 @media screen and (max-width: 400px){
-    .row-cols-1 > * {width: 100%;}
+    .row-cols-1 > * {width: 50%;}
+    .photo_card_door > * {width: 75px!important;}
     .header_platform > * {height: 115px;}
     .shablon_door_photos > * {width: 165px;}
     .photo_header {width: 110%!important;}
 }
+
+
 
 /*.photo_header {*/
 /*     background-image:url("/static/main/img/header_phone.png");*/

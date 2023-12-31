@@ -9,8 +9,8 @@
 <div class="container">
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 row-cols-md-5 row-cols-md-6 g-2">
   {% for photo in page_obj %}
-        <div class="col" style="min-height: 150px">
-          <div class="card shadow-sm" style="display: flex; min-height: 150px; justify-content: center;">
+        <div id="card_accessories" class="col" style="min-height: 180px">
+          <div class="card shadow-sm" style="display: flex; min-height: 180px; justify-content: center;">
             <div style="margin: 0 auto">
                 <img src="{{photo.photo.url}}" >
             </div>
